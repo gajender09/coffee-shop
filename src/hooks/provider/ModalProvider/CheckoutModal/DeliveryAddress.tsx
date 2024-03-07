@@ -4,46 +4,28 @@ import { useModal } from '@/hooks/useModal';
 import Title6 from '@/components/shared/typo/Title6';
 import MapNonInteractive from '@/components/shared/MapNonInteractive';
 import AddressCard from '@/components/shared/AddressCard';
+import React from 'react';
+ // Import the Header component with the correct relative path
 
-export default function DeliveryAddress() {
-  // Address
-  const { address } = useUserAddress();
-  // Modal
-  const { showAddressModal } = useModal();
+
+import LeafletMap from './LeafletMap'; // Import the LeafletMap component
+
+const DeliveryAddress = () => {
+  const center = { lat: 13.084622, lng: 80.248357 }; // You can set the center as needed
 
   return (
-    <div>
-      <Title6 className="mb-3">Delivery Address</Title6>
-      {address?.fullAddress ? (
-        <div>
-          <div className="w-full h-32 bg-gray-200 rounded-2xl overflow-hidden">
-            <MapNonInteractive />
-          </div>
-          <div className="flex items-start justify-between mt-1">
-            <span className="text-gray-800 font-medium line-clamp-2">
-              {address?.fullAddress}
-            </span>
-            <button
-              type="button"
-              onClick={showAddressModal}
-              className="text-primary bg-gray-100 hover:bg-gray-200 focus:outline-none rounded-full text-sm p-1.5 inline-flex items-center"
-            >
-              <PencilSquareIcon className="w-5 h-5" />
-            </button>
-          </div>
+    <>
+      
+
+      <div className="row">
+        <div className="col text-center">
+          <h2>Delivery Address Map</h2>
+          <p>Loading basic map using layer from maptiler</p>
+          <LeafletMap center={center} /> {/* Use the LeafletMap component */}
         </div>
-      ) : (
-        <AddressCard>
-          <div className="h-full flex flex-col items-center justify-center">
-            <button
-              onClick={showAddressModal}
-              className="font-semibold text-white underline underline-offset-4"
-            >
-              Add Your Location
-            </button>
-          </div>
-        </AddressCard>
-      )}
-    </div>
+      </div>
+    </>
   );
-}
+};
+
+export default DeliveryAddress;

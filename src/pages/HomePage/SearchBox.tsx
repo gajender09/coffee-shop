@@ -9,7 +9,7 @@ export default function SearchBox() {
     >
       <div className="flex items-center gap-2">
         <MagnifyingGlassIcon className="h-5 w-5" />
-        <span>Search your drink</span>
+        <span>Search your interest</span>
       </div>
     </Link>
   );

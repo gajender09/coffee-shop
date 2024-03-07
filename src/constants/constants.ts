@@ -11,20 +11,20 @@ export const defaultCoordinate: LatLng = {
   lat: 16.785692464382592,
 };
 
-export const defaultDeliFee = 2000;
+export const defaultDeliFee = 0;
 
 export const coffeeSizeOptions = [
   {
     value: CoffeeSize.SMALL,
-    label: 'Small',
+    label: 'Cappuccino',
   },
   {
     value: CoffeeSize.MEDIUM,
-    label: 'Medium',
+    label: 'Latte',
   },
   {
     value: CoffeeSize.LARGE,
-    label: 'Large',
+    label: 'Americano',
   },
 ];
 

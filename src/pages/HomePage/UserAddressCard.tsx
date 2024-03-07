@@ -2,12 +2,22 @@ import { PencilSquareIcon } from '@heroicons/react/16/solid';
 import { useModal } from '@/hooks/useModal';
 import { useUserAddress } from '@/hooks/useUserAddress';
 import AddressCard from '@/components/shared/AddressCard';
+import { useNavigate } from 'react-router-dom';
+import LeafletMap from '@/hooks/provider/ModalProvider/CheckoutModal/LeafletMap';
+
 
 export default function UserAddressCard() {
   // Address Provider
   const { address } = useUserAddress();
   // Modal Provider
   const { showAddressModal } = useModal();
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleShowAddressModal = () => {
+    // Here you can define the route you want to navigate to
+    // For example, '/address'
+    navigate('');
+  };
 
   return (
     <AddressCard>

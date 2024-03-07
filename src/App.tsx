@@ -8,6 +8,7 @@ import UserAddressProvider from './hooks/provider/UserAddressProvider.tsx';
 import { GOOGLE_OAUTH_CLIENT_ID } from './constants/constants.ts';
 import ScrollToTop from './components/shared/ScrollToTop.tsx';
 import Router from './Router.tsx';
+import MapComponent from './components/shared/MapComponent.tsx';
 
 export default function App() {
   return (
